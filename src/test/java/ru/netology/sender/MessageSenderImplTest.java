@@ -56,28 +56,4 @@ class MessageSenderImplTest {
 
         assertEquals(expected, actual);
     }
-
-    @Test
-    void byIpTest() {
-        Location expected = new Location("Moscow", Country.RUSSIA, null, 0);
-
-        String ip = "172.25.46.58";
-//        String ip = "96.25.46.58";
-
-        GeoService geoService = new GeoServiceImpl();
-        Location actual = geoService.byIp(ip);
-
-        assertEquals(expected.getCountry(), actual.getCountry());
-//        assertEquals(expected.getCity(), actual.getCity());
-    }
-
-    @Test
-    void localeTest() {
-        String expected = "Добро пожаловать";
-
-        LocalizationService localizationService = new LocalizationServiceImpl();
-        String actual = localizationService.locale(Country.RUSSIA);
-
-        assertEquals(expected, actual);
-    }
 }
