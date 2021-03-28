@@ -12,9 +12,7 @@ class LocalizationServiceImplTest {
     void localeTest() {
         String expected = "Добро пожаловать";
 
-        LocalizationService localizationService = Mockito.mock(LocalizationServiceImpl.class);
-        Mockito.when(localizationService.locale(Country.RUSSIA))
-                .thenReturn("Добро пожаловать");
+        LocalizationService localizationService = new LocalizationServiceImpl();
 
         String actual = localizationService.locale(Country.RUSSIA);
 
